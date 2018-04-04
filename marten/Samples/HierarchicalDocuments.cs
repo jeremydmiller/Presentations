@@ -20,6 +20,8 @@ namespace Samples
                     .AddSubClass<DomesticOrder>()
                     .AddSubClass<InternationalOrder>();
             });
+            
+            theStore.Advanced.Clean.CompletelyRemoveAll();
         }
         
         public enum Priority

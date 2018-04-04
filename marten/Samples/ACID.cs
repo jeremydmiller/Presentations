@@ -24,7 +24,8 @@ namespace Samples
             {
                 _.Connection(ConnectionSource.ConnectionString);
 
-                _.Schema.For<Target>().Index(d => d.Color);
+                _.Schema.For<Target>()
+                    .Index(d => d.Color);
             });
             
             theStore.Advanced.Clean.CompletelyRemoveAll();
@@ -35,20 +36,22 @@ namespace Samples
         [Fact]
         public async Task Proving_to_Frans_Bouma_that_Marten_is_ACID_compliant()
         {
-
             var targets = Target.GenerateRandomData(1000).ToArray();
             var greenCount = targets.Count(x => x.Color == Colors.Green);
             greenCount.ShouldBeGreaterThan(0);
             greenCount.ShouldBeLessThan(1000);
             
             
-            // Insert all the documents
-            using (var session = theStore.LightweightSession())
-            {
-                session.Store(targets);
-                await session.SaveChangesAsync();
-            }
             
+            theStore.BulkInsert(targets);
+            
+            // Insert all the documents
+//            using (var session = theStore.LightweightSession())
+//            {
+//                session.Store(targets);
+//                await session.SaveChangesAsync();
+//            }
+//            
             using (var session = theStore.QuerySession())
             {
                 var dbCount = await session

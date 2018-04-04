@@ -31,8 +31,8 @@ namespace Samples.EventStore
                 Name = "Escape Emond's Field"
             };
             
-            var joined = new MembersJoined { Members = new[] { "Rand", "Matt", "Perrin", "Thom" } };
-            var departed = new MembersDeparted { Members = new[] { "Thom" } };
+            var joined = new MembersJoined { Members = new[] { "Rand", "Matt", "Perrin", "Thom" }, Day = 1};
+            var departed = new MembersDeparted { Members = new[] { "Thom" }, Day = 5};
 
             using (var session = theStore.LightweightSession())
             {
@@ -51,7 +51,8 @@ namespace Samples.EventStore
             // Aggregate Live
             using (var session = theStore.LightweightSession())
             {
-                var party = session.Events.AggregateStream<QuestParty>(started.Id);
+                var party = session.Events
+                    .AggregateStream<QuestParty>(started.Id);
                 
                 _output.WriteLine(JsonConvert.SerializeObject(party));
             }
@@ -109,7 +110,9 @@ namespace Samples.EventStore
             theStore = DocumentStore.For(_ =>
             {
                 _.Connection(ConnectionSource.ConnectionString);
-                _.Events.InlineProjections.AggregateStreamsWith<QuestParty>();
+
+                _.Events.AsyncProjections.AggregateStreamsWith<QuestParty>();
+                
             });
 
             

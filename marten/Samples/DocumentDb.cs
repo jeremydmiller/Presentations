@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Marten;
+using Newtonsoft.Json;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
@@ -17,10 +18,23 @@ namespace Samples
         {
             _output = output;
             
-            theStore = DocumentStore.For(ConnectionSource.ConnectionString);
+            theStore = DocumentStore.For(_ =>
+            {
+                _.Connection(ConnectionSource.ConnectionString);
+
+                // In production
+                _.AutoCreateSchemaObjects = AutoCreate.None;
+
+            });
             
             // Just wiping out any existing database objects in the schema first
-            theStore.Advanced.Clean.CompletelyRemoveAll();
+            //theStore.Advanced.Clean.CompletelyRemoveAll();
+        }
+        
+        [Fact]
+        public void clean_it_off()
+        {
+        
         }
 
         public enum Priority
@@ -38,6 +52,8 @@ namespace Samples
             public string CustomerId { get; set; }
 
             public IList<OrderDetail> Details { get; set; } = new List<OrderDetail>();
+            
+            public Address Address { get; set; }
         }
 
         public class OrderDetail
@@ -58,6 +74,11 @@ namespace Samples
                 {
                     new OrderDetail {PartNumber = "10XFX", Number = 5},
                     new OrderDetail {PartNumber = "20XFX", Number = 15},
+                },
+                Address = new Address
+                {
+                    City = "Austin",
+                    StateOrProvince = "TX"
                 }
             };
 
@@ -77,7 +98,12 @@ namespace Samples
                 order2.ShouldNotBeSameAs(order);
                 
                 order2.CustomerId.ShouldBe(order.CustomerId);
+                
+                
+                _output.WriteLine(JsonConvert.SerializeObject(order2));
             }
+            
+            
         }
         
         

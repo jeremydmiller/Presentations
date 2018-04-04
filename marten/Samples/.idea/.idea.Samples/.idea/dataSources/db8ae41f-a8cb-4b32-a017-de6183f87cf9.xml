@@ -25,8 +25,8 @@
     </role>
     <schema id="5" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-03-28.07:35:48.580</IntrospectionTimestamp>
-      <IntrospectionStateNumber>38671</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-03-28.10:03:02.570</IntrospectionTimestamp>
+      <IntrospectionStateNumber>38885</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -63,14 +63,47 @@
     <schema id="16" parent="2" name="outbox_receiver">
       <ObjectId>78741</ObjectId>
     </schema>
-    <table id="17" parent="5" name="mt_doc_target">
-      <ObjectId>82145</ObjectId>
+    <sequence id="17" parent="5" name="mt_events_sequence">
+      <ObjectId>82755</ObjectId>
+      <StateNumber>38883</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="18" parent="5" name="mt_doc_questparty">
+      <ObjectId>82760</ObjectId>
       <Comment>origin:Marten.IDocumentStore, Marten, Version=2.7.1.0, Culture=neutral, PublicKeyToken=null</Comment>
-      <StateNumber>38671</StateNumber>
+      <StateNumber>38885</StateNumber>
     </table>
-    <routine id="18" parent="5" name="mt_immutable_timestamp">
-      <ObjectId>82144</ObjectId>
-      <StateNumber>38670</StateNumber>
+    <table id="19" parent="5" name="mt_event_progression">
+      <ObjectId>82747</ObjectId>
+      <Comment>origin:Marten.IDocumentStore, Marten, Version=2.7.1.0, Culture=neutral, PublicKeyToken=null</Comment>
+      <StateNumber>38883</StateNumber>
+    </table>
+    <table id="20" parent="5" name="mt_events">
+      <ObjectId>82728</ObjectId>
+      <Comment>origin:Marten.IDocumentStore, Marten, Version=2.7.1.0, Culture=neutral, PublicKeyToken=null</Comment>
+      <StateNumber>38883</StateNumber>
+    </table>
+    <table id="21" parent="5" name="mt_streams">
+      <ObjectId>82717</ObjectId>
+      <Comment>origin:Marten.IDocumentStore, Marten, Version=2.7.1.0, Culture=neutral, PublicKeyToken=null</Comment>
+      <StateNumber>38883</StateNumber>
+    </table>
+    <routine id="22" parent="5" name="mt_append_event">
+      <ObjectId>82757</ObjectId>
+      <StateNumber>38883</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>stream uuid, stream_type character varying, tenantid character varying, event_ids uuid[], event_types character varying[], dotnet_types character varying[], bodies jsonb[]</ArgumentsDefinition>
+      <ResultsDefinition>integer[]</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <ConcurrencyKind>unsafe</ConcurrencyKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="23" parent="5" name="mt_immutable_timestamp">
+      <ObjectId>82759</ObjectId>
+      <StateNumber>38884</StateNumber>
       <VolatilityKind>immutable</VolatilityKind>
       <ArgumentsDefinition>value text</ArgumentsDefinition>
       <ResultsDefinition>timestamp with time zone</ResultsDefinition>
@@ -79,9 +112,9 @@
       <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
-    <routine id="19" parent="5" name="mt_insert_target">
-      <ObjectId>82157</ObjectId>
-      <StateNumber>38671</StateNumber>
+    <routine id="24" parent="5" name="mt_insert_questparty">
+      <ObjectId>82771</ObjectId>
+      <StateNumber>38885</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
       <ArgumentsDefinition>doc jsonb, docdotnettype character varying, docid uuid, docversion uuid</ArgumentsDefinition>
       <ResultsDefinition>uuid</ResultsDefinition>
@@ -90,9 +123,20 @@
       <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
-    <routine id="20" parent="5" name="mt_update_target">
-      <ObjectId>82158</ObjectId>
-      <StateNumber>38671</StateNumber>
+    <routine id="25" parent="5" name="mt_mark_event_progression">
+      <ObjectId>82758</ObjectId>
+      <StateNumber>38883</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>name character varying, last_encountered bigint</ArgumentsDefinition>
+      <ResultsDefinition>void</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <ConcurrencyKind>unsafe</ConcurrencyKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="26" parent="5" name="mt_update_questparty">
+      <ObjectId>82772</ObjectId>
+      <StateNumber>38885</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
       <ArgumentsDefinition>doc jsonb, docdotnettype character varying, docid uuid, docversion uuid</ArgumentsDefinition>
       <ResultsDefinition>uuid</ResultsDefinition>
@@ -101,9 +145,9 @@
       <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
-    <routine id="21" parent="5" name="mt_upsert_target">
-      <ObjectId>82156</ObjectId>
-      <StateNumber>38671</StateNumber>
+    <routine id="27" parent="5" name="mt_upsert_questparty">
+      <ObjectId>82770</ObjectId>
+      <StateNumber>38885</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
       <ArgumentsDefinition>doc jsonb, docdotnettype character varying, docid uuid, docversion uuid</ArgumentsDefinition>
       <ResultsDefinition>uuid</ResultsDefinition>
@@ -112,117 +156,333 @@
       <ConcurrencyKind>unsafe</ConcurrencyKind>
       <Cost>100.0</Cost>
     </routine>
-    <column id="22" parent="17" name="id">
+    <column id="28" parent="18" name="id">
       <Position>1</Position>
       <DataType>uuid|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>38671</StateNumber>
+      <StateNumber>38885</StateNumber>
     </column>
-    <column id="23" parent="17" name="data">
+    <column id="29" parent="18" name="data">
       <Position>2</Position>
       <DataType>jsonb|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>38671</StateNumber>
+      <StateNumber>38885</StateNumber>
     </column>
-    <column id="24" parent="17" name="mt_last_modified">
+    <column id="30" parent="18" name="mt_last_modified">
       <Position>3</Position>
       <DataType>timestamp with time zone|0</DataType>
-      <StateNumber>38671</StateNumber>
+      <StateNumber>38885</StateNumber>
       <DefaultExpression>transaction_timestamp()</DefaultExpression>
     </column>
-    <column id="25" parent="17" name="mt_version">
+    <column id="31" parent="18" name="mt_version">
       <Position>4</Position>
       <DataType>uuid|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>38671</StateNumber>
+      <StateNumber>38885</StateNumber>
       <DefaultExpression>(md5(((random())::text || (clock_timestamp())::text)))::uuid</DefaultExpression>
     </column>
-    <column id="26" parent="17" name="mt_dotnet_type">
+    <column id="32" parent="18" name="mt_dotnet_type">
       <Position>5</Position>
       <DataType>varchar|0</DataType>
-      <StateNumber>38671</StateNumber>
+      <StateNumber>38885</StateNumber>
     </column>
-    <index id="27" parent="17" name="pk_mt_doc_target">
-      <ObjectId>82153</ObjectId>
+    <index id="33" parent="18" name="pk_mt_doc_questparty">
+      <ObjectId>82768</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="28" parent="17" name="mt_doc_target_idx_color">
-      <ObjectId>82155</ObjectId>
-      <ColNames>&#x1b;((data -&gt;&gt; &apos;Color&apos;::text)::integer)</ColNames>
-      <FunctionBased>1</FunctionBased>
-    </index>
-    <key id="29" parent="17" name="pk_mt_doc_target">
-      <ObjectId>82154</ObjectId>
+    <key id="34" parent="18" name="pk_mt_doc_questparty">
+      <ObjectId>82769</ObjectId>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>pk_mt_doc_target</UnderlyingIndexName>
+      <UnderlyingIndexName>pk_mt_doc_questparty</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <argument id="30" parent="18" name="value">
+    <column id="35" parent="19" name="name">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="36" parent="19" name="last_seq_id">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <index id="37" parent="19" name="pk_mt_event_progression">
+      <ObjectId>82753</ObjectId>
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="19" name="pk_mt_event_progression">
+      <ObjectId>82754</ObjectId>
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>pk_mt_event_progression</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="20" name="seq_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+      <SequenceName>mt_events_sequence</SequenceName>
+    </column>
+    <column id="40" parent="20" name="id">
+      <Position>2</Position>
+      <DataType>uuid|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="41" parent="20" name="stream_id">
+      <Position>3</Position>
+      <DataType>uuid|0</DataType>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="42" parent="20" name="version">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="43" parent="20" name="data">
+      <Position>5</Position>
+      <DataType>jsonb|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="44" parent="20" name="type">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="45" parent="20" name="timestamp">
+      <Position>7</Position>
+      <DataType>timestamp with time zone|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+    </column>
+    <column id="46" parent="20" name="tenant_id">
+      <Position>8</Position>
+      <DataType>varchar|0</DataType>
+      <StateNumber>38883</StateNumber>
+      <DefaultExpression>&apos;*DEFAULT*&apos;::character varying</DefaultExpression>
+    </column>
+    <column id="47" parent="20" name="mt_dotnet_type">
+      <Position>9</Position>
+      <DataType>varchar|0</DataType>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <index id="48" parent="20" name="pk_mt_events">
+      <ObjectId>82736</ObjectId>
+      <ColNames>seq_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="49" parent="20" name="pk_mt_events_id_unique">
+      <ObjectId>82740</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="50" parent="20" name="pk_mt_events_stream_and_version">
+      <ObjectId>82738</ObjectId>
+      <ColNames>stream_id
+version</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="20" name="pk_mt_events">
+      <ObjectId>82737</ObjectId>
+      <ColNames>seq_id</ColNames>
+      <UnderlyingIndexName>pk_mt_events</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="52" parent="20" name="pk_mt_events_id_unique">
+      <ObjectId>82741</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>pk_mt_events_id_unique</UnderlyingIndexName>
+    </key>
+    <key id="53" parent="20" name="pk_mt_events_stream_and_version">
+      <ObjectId>82739</ObjectId>
+      <ColNames>stream_id
+version</ColNames>
+      <UnderlyingIndexName>pk_mt_events_stream_and_version</UnderlyingIndexName>
+    </key>
+    <foreign-key id="54" parent="20" name="mt_events_stream_id_fkey">
+      <ObjectId>82742</ObjectId>
+      <ColNames>stream_id</ColNames>
+      <RefTableId>82717</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>mt_streams</RefTableName>
+      <RefKeyName>pk_mt_streams</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="55" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>uuid|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="56" parent="21" name="type">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="57" parent="21" name="version">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="58" parent="21" name="timestamp">
+      <Position>4</Position>
+      <DataType>timestamp with time zone|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+    </column>
+    <column id="59" parent="21" name="snapshot">
+      <Position>5</Position>
+      <DataType>jsonb|0</DataType>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="60" parent="21" name="snapshot_version">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>38883</StateNumber>
+    </column>
+    <column id="61" parent="21" name="created">
+      <Position>7</Position>
+      <DataType>timestamp with time zone|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>38883</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+    </column>
+    <column id="62" parent="21" name="tenant_id">
+      <Position>8</Position>
+      <DataType>varchar|0</DataType>
+      <StateNumber>38883</StateNumber>
+      <DefaultExpression>&apos;*DEFAULT*&apos;::character varying</DefaultExpression>
+    </column>
+    <index id="63" parent="21" name="pk_mt_streams">
+      <ObjectId>82726</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="64" parent="21" name="pk_mt_streams">
+      <ObjectId>82727</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>pk_mt_streams</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <argument id="65" parent="22" name="stream">
+      <Position>1</Position>
+      <DataType>uuid|0</DataType>
+    </argument>
+    <argument id="66" parent="22" name="stream_type">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="67" parent="22" name="tenantid">
+      <Position>3</Position>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="68" parent="22" name="event_ids">
+      <Position>4</Position>
+      <DataType>uuid[]|0</DataType>
+    </argument>
+    <argument id="69" parent="22" name="event_types">
+      <Position>5</Position>
+      <DataType>character varying[]|0</DataType>
+    </argument>
+    <argument id="70" parent="22" name="dotnet_types">
+      <Position>6</Position>
+      <DataType>character varying[]|0</DataType>
+    </argument>
+    <argument id="71" parent="22" name="bodies">
+      <Position>7</Position>
+      <DataType>jsonb[]|0</DataType>
+    </argument>
+    <argument id="72" parent="22">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer[]|0</DataType>
+    </argument>
+    <argument id="73" parent="23" name="value">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="31" parent="18">
+    <argument id="74" parent="23">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>timestamp with time zone|0</DataType>
     </argument>
-    <argument id="32" parent="19" name="doc">
+    <argument id="75" parent="24" name="doc">
       <Position>1</Position>
       <DataType>jsonb|0</DataType>
     </argument>
-    <argument id="33" parent="19" name="docdotnettype">
+    <argument id="76" parent="24" name="docdotnettype">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
     </argument>
-    <argument id="34" parent="19" name="docid">
+    <argument id="77" parent="24" name="docid">
       <Position>3</Position>
       <DataType>uuid|0</DataType>
     </argument>
-    <argument id="35" parent="19" name="docversion">
+    <argument id="78" parent="24" name="docversion">
       <Position>4</Position>
       <DataType>uuid|0</DataType>
     </argument>
-    <argument id="36" parent="19">
+    <argument id="79" parent="24">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0</DataType>
     </argument>
-    <argument id="37" parent="20" name="doc">
+    <argument id="80" parent="25" name="name">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="81" parent="25" name="last_encountered">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+    </argument>
+    <argument id="82" parent="25">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>void|0</DataType>
+    </argument>
+    <argument id="83" parent="26" name="doc">
       <Position>1</Position>
       <DataType>jsonb|0</DataType>
     </argument>
-    <argument id="38" parent="20" name="docdotnettype">
+    <argument id="84" parent="26" name="docdotnettype">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
     </argument>
-    <argument id="39" parent="20" name="docid">
+    <argument id="85" parent="26" name="docid">
       <Position>3</Position>
       <DataType>uuid|0</DataType>
     </argument>
-    <argument id="40" parent="20" name="docversion">
+    <argument id="86" parent="26" name="docversion">
       <Position>4</Position>
       <DataType>uuid|0</DataType>
     </argument>
-    <argument id="41" parent="20">
+    <argument id="87" parent="26">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0</DataType>
     </argument>
-    <argument id="42" parent="21" name="doc">
+    <argument id="88" parent="27" name="doc">
       <Position>1</Position>
       <DataType>jsonb|0</DataType>
     </argument>
-    <argument id="43" parent="21" name="docdotnettype">
+    <argument id="89" parent="27" name="docdotnettype">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
     </argument>
-    <argument id="44" parent="21" name="docid">
+    <argument id="90" parent="27" name="docid">
       <Position>3</Position>
       <DataType>uuid|0</DataType>
     </argument>
-    <argument id="45" parent="21" name="docversion">
+    <argument id="91" parent="27" name="docversion">
       <Position>4</Position>
       <DataType>uuid|0</DataType>
     </argument>
-    <argument id="46" parent="21">
+    <argument id="92" parent="27">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0</DataType>
     </argument>

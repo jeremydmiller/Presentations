@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Marten;
+using Marten.Schema;
 using Newtonsoft.Json;
 using Shouldly;
 using Xunit;
@@ -21,14 +22,10 @@ namespace Samples
             theStore = DocumentStore.For(_ =>
             {
                 _.Connection(ConnectionSource.ConnectionString);
-
-                // In production
                 _.AutoCreateSchemaObjects = AutoCreate.None;
-
             });
-            
-            // Just wiping out any existing database objects in the schema first
-            //theStore.Advanced.Clean.CompletelyRemoveAll();
+    
+            theStore.Advanced.Clean.CompletelyRemoveAll();
         }
         
         [Fact]
@@ -52,7 +49,6 @@ namespace Samples
             public string CustomerId { get; set; }
 
             public IList<OrderDetail> Details { get; set; } = new List<OrderDetail>();
-            
             public Address Address { get; set; }
         }
 

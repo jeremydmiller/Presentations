@@ -43,15 +43,15 @@ namespace Samples
             
             
             
-            theStore.BulkInsert(targets);
+            //theStore.BulkInsert(targets);
             
             // Insert all the documents
-//            using (var session = theStore.LightweightSession())
-//            {
-//                session.Store(targets);
-//                await session.SaveChangesAsync();
-//            }
-//            
+            using (var session = theStore.LightweightSession())
+            {
+                session.Store(targets);
+                await session.SaveChangesAsync();
+            }
+          
             using (var session = theStore.QuerySession())
             {
                 var dbCount = await session

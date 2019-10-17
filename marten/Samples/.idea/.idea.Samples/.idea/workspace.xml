@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da030cba-3e6c-4ce0-a8bf-73b319517b68" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Samples/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Samples/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Samples/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Samples/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Samples/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Samples/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACID.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ACID.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConnectionSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConnectionSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DocumentDb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DocumentDb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventStore/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventStore/Events.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventStore/exercise_the_event_store.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventStore/exercise_the_event_store.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HierarchicalDocuments.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HierarchicalDocuments.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Samples.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Samples.csproj" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="6d9b600a:PostgresImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="mt_doc_documentdb_order: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1181835910">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cs" value="17" />
+          <entry key="sql" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="17" />
+          <entry key="Scratch" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cs" value="274" />
+          <entry key="sql" value="39" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="C#" value="274" />
+          <entry key="Scratch" value="39" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/DocumentDb.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ACID.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EventStore/QuestParty.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EventStore/Events.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EventStore/exercise_the_event_store.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/718D2C75-4857-416B-BEA0-70B854192E71/29/47da66a4/IDocumentSession.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HierarchicalDocuments.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/718D2C75-4857-416B-BEA0-70B854192E71/b2/78e6daaf/IEventStore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ConnectionSource.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ConnectionSource.cs" />
+        <option value="$PROJECT_DIR$/EventStore/Events.cs" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/15df0d32-6068-4f2c-b6fa-bfa4242aa508/console.sql" />
+        <option value="$PROJECT_DIR$/DocumentDb.cs" />
+        <option value="$PROJECT_DIR$/HierarchicalDocuments.cs" />
+        <option value="$PROJECT_DIR$/ACID.cs" />
+        <option value="$PROJECT_DIR$/EventStore/exercise_the_event_store.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Samples" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Samples" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Samples" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Samples" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Samples" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="EventStore" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="que&#9;FILE&#9;file:///Users/jeremydmiller/code/presentations/marten/Samples/EventStore/QuestParty.cs&#10;aci&#9;FILE&#9;file:///Users/jeremydmiller/code/presentations/marten/Samples/ACID.cs" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da030cba-3e6c-4ce0-a8bf-73b319517b68" name="Default" comment="" />
+      <created>1531163669598</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1531163669598</updated>
+      <workItem from="1531163670761" duration="189000" />
+      <workItem from="1531172542088" duration="3938000" />
+      <workItem from="1534251921683" duration="155000" />
+      <workItem from="1536953784303" duration="4607000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="8889000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25825346" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Unit Tests" order="11" visible="true" weight="0.34081632" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32920355" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.328541" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="das://694159ec-104c-4de6-bc62-a097f14e095e/database/postgres/schema/public/table/mt_doc_documentdb_order">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="data" languageId="JSON" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConnectionSource.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
+          <folding>
+            <marker date="1536953846966" expanded="false" signature="6:72" ph="..." />
+            <marker date="1536953846966" expanded="true" signature="91:802" ph="{...}" />
+            <marker date="1536953846966" expanded="true" signature="147:800" ph="{...}" />
+            <marker date="1536953846966" expanded="true" signature="462:714" ph="{...}" />
+            <marker date="1536953846966" expanded="true" signature="774:794" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/15df0d32-6068-4f2c-b6fa-bfa4242aa508/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DocumentDb.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+          <folding>
+            <marker date="1536960870220" expanded="false" signature="6:190" ph="..." />
+            <marker date="1536960870220" expanded="true" signature="209:4385" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="239:4383" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="399:527" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="586:665" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="713:768" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="796:1130" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="1164:1279" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="1519:2728" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="1576:2081" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="1724:1888" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="1968:2067" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="2147:2263" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="2322:2718" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="2805:3910" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="2862:3188" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="3010:3174" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="3254:3359" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="3493:3874" ph="{...}" />
+            <marker date="1536960870220" expanded="true" signature="4003:4368" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HierarchicalDocuments.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2834">
+          <caret line="115" column="27" selection-start-line="115" selection-start-column="27" selection-end-line="115" selection-end-column="27" />
+          <folding>
+            <marker date="1536961263657" expanded="false" signature="6:135" ph="..." />
+            <marker date="1536961263657" expanded="true" signature="154:3995" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="195:3993" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="357:764" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="443:680" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="802:857" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="894:1159" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="1208:1289" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="1368:1483" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="1558:3978" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="1627:1953" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="1775:1939" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="2038:2325" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="2220:2311" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="2391:2583" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="2654:3968" ph="{...}" />
+            <marker date="1536961263657" expanded="true" signature="3561:3860" ph="/* select d.data, d.id, d.mt_doc_type, d.mt_version from public.mt_doc_hierarchicaldocuments_order as d where (d. ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ACID.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="41" />
+          <folding>
+            <marker date="1536961881690" expanded="false" signature="6:297" ph="..." />
+            <marker date="1536961881690" expanded="true" signature="316:7150" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="340:3093" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="411:726" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="467:642" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="849:1736" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="1203:1422" ph="/* Insert all the documents ... */" />
+            <marker date="1536961881690" expanded="true" signature="1491:1726" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="1947:2201" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="2103:2191" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="2283:3087" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="2661:2779" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="2850:3077" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="3149:3524" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="3180:3200" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="3548:3601" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="3626:7148" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="3759:3882" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="3950:4063" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="4138:4305" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="4202:4295" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="4361:6006" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="4934:5262" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="5532:5968" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="5741:5828" ph="{...}" />
+            <marker date="1536961881690" expanded="true" signature="6031:6143" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventStore/Events.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+          <folding>
+            <marker date="1536957500150" expanded="false" signature="6:29" ph="..." />
+            <marker date="1536957500150" expanded="true" signature="59:2213" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="84:133" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="169:386" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="302:380" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="418:993" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="456:476" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="557:664" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="881:987" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="1025:1222" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="1152:1216" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="1251:1446" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="1378:1440" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="1480:1854" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="1740:1848" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="1887:2211" ph="{...}" />
+            <marker date="1536957500150" expanded="true" signature="2109:2205" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/718D2C75-4857-416B-BEA0-70B854192E71/b2/78e6daaf/IEventStore.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/718D2C75-4857-416B-BEA0-70B854192E71/29/47da66a4/IDocumentSession.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventStore/QuestParty.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <marker date="1531163631928" expanded="false" signature="6:82" ph="..." />
+            <marker date="1531163631928" expanded="true" signature="112:1171" ph="{...}" />
+            <marker date="1531163631928" expanded="true" signature="142:1169" ph="{...}" />
+            <marker date="1531163631928" expanded="true" signature="253:480" ph="{...}" />
+            <marker date="1531163631928" expanded="true" signature="279:350" ph="{...}" />
+            <marker date="1531163631928" expanded="true" signature="366:470" ph="{...}" />
+            <marker date="1531163631928" expanded="true" signature="605:668" ph="{...}" />
+            <marker date="1531163631928" expanded="true" signature="721:808" ph="{...}" />
+            <marker date="1531163631928" expanded="true" signature="857:910" ph="{...}" />
+            <marker date="1531163631928" expanded="true" signature="1075:1163" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventStore/exercise_the_event_store.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="161" column="40" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="65" />
+          <folding>
+            <marker date="1536962610082" expanded="false" signature="6:119" ph="..." />
+            <marker date="1536962610082" expanded="true" signature="149:5342" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="193:5340" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="358:638" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="733:2003" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="799:897" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="1211:1361" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="1451:1642" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="1762:1980" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="2100:3516" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="2156:2328" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="2412:2510" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="2769:2919" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="3009:3191" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="3311:3493" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="3616:5334" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="3672:3861" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="3959:4057" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="4316:4477" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="4567:4760" ph="{...}" />
+            <marker date="1536962610082" expanded="true" signature="5129:5311" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

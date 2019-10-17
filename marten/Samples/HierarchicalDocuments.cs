@@ -4,15 +4,18 @@ using System.Linq;
 using Marten;
 using Shouldly;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Samples
 {
     public class HierarchicalDocuments
     {
+        private readonly ITestOutputHelper _output;
         private DocumentStore theStore;
 
-        public HierarchicalDocuments()
+        public HierarchicalDocuments(ITestOutputHelper output)
         {
+            _output = output;
             theStore = DocumentStore.For(x =>
             {
                 x.Connection(ConnectionSource.ConnectionString);
@@ -40,8 +43,12 @@ namespace Samples
 
             public IList<OrderDetail> Details { get; set; } = new List<OrderDetail>();
         }
-        
-        public class InternationalOrder : Order{}
+
+        public class InternationalOrder : Order
+        {
+            public string Country { get; set; }
+            
+        }
         public class DomesticOrder : Order{}
 
         public class OrderDetail
@@ -67,6 +74,7 @@ namespace Samples
             
             var international1 = new InternationalOrder()
             {
+                Country = "Spain",
                 Priority = Priority.High,
                 CustomerId = "INT002",
                 Details = new List<OrderDetail>
@@ -100,6 +108,27 @@ namespace Samples
                 var domestics = session
                     .Query<DomesticOrder>()
                     .Count(x => x.CustomerId == "SOMEBODY");
+
+
+                var cmd = session
+                    .Query<DomesticOrder>()
+                    .Where(x => x.CustomerId == "SOMEBODY")
+                    .ToCommand();
+                
+               _output.WriteLine(cmd.CommandText);
+                
+               /*
+                *
+                *
+                *select d.data, d.id, d.mt_doc_type, d.mt_version from public.mt_doc_hierarchicaldocuments_order as d where (d.data ->> 'CustomerId' = :arg0 and (d.mt_doc_type = 'hierarchical_documents___domestic_order'))
+
+                * 
+                */
+                   
+                   
+                   
+                
+                
             }
         }
         

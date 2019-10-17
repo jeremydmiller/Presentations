@@ -30,6 +30,8 @@ namespace Samples.EventStore
                 Id = Guid.NewGuid(),
                 Name = "Escape Emond's Field"
             };
+
+            var questId = started.Id;
             
             var joined = new MembersJoined { Members = new[] { "Rand", "Matt", "Perrin", "Thom" }, Day = 1};
             var departed = new MembersDeparted { Members = new[] { "Thom" }, Day = 5};
@@ -43,7 +45,7 @@ namespace Samples.EventStore
             
             using (var session = theStore.LightweightSession())
             {
-                session.Events.Append(started.Id, new MembersJoined {Members = new string[] {"Moiraine", "Lan"}});
+                session.Events.Append(started.Id, new MembersJoined {Members = new string[] {"Moiraine", "Lan"}, Day = 7});
                 session.SaveChanges();
             }
             
@@ -52,7 +54,7 @@ namespace Samples.EventStore
             using (var session = theStore.LightweightSession())
             {
                 var party = session.Events
-                    .AggregateStream<QuestParty>(started.Id);
+                    .AggregateStream<QuestParty>(questId);
                 
                 _output.WriteLine(JsonConvert.SerializeObject(party));
             }

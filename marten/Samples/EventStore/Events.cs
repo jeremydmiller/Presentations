@@ -8,7 +8,6 @@ namespace Samples.EventStore
         public Guid Id { get; set; }
     }
 
-    // SAMPLE: sample-events
     public class ArrivedAtLocation
     {
 

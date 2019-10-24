@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/16.2.0/build/netcoreapp1.0" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="async.csproj" t="IncludeRecursive" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="DataAccess" t="Include">
+        <e p="ContinuationPassingStyle" t="Include">
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="DirtyRead" t="Include">
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="ExplicitTransactions" t="Include">
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="OpenAndCloseConnections" t="Include">
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="UnitOfWork" t="Include">
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="UsingDapper" t="Include">
+          <e p="QueryingForUsers.cs" t="Include" />
+        </e>
+      </e>
+      <e p="DoNotShareConnections.cs" t="Include" />
+      <e p="Internal" t="Include">
+        <e p="DatabaseSettings.cs" t="Include" />
+        <e p="IMessagePublisher.cs" t="Include" />
+        <e p="NewUserRequest.cs" t="Include" />
+        <e p="User.cs" t="Include" />
+        <e p="UserCreated.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.0" t="Include">
+            <e p="async.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="~$DatabaseAndAsyncBestPractices.pptx" t="Include" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_.19.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+  </component>
+</project>

@@ -60,13 +60,22 @@ namespace ExplicitTransactions
 
                 var tx = connection.BeginTransaction();
 
-                foreach (var user in users)
+                try
                 {
-                    // Do what you need to do right here
-                    writeUser(user, tx);
-                }
+                    foreach (var user in users)
+                    {
+                        // Do what you need to do right here
+                        writeUser(user, tx);
+                    }
                 
-                tx.Commit();
+                    tx.Commit();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    tx.Rollback();
+                    throw;
+                }
             }
         }
 

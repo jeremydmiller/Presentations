@@ -11,10 +11,7 @@ namespace Samples.EventStore
 
         public string[] Members
         {
-            get
-            {
-                return _members.ToArray();
-            }
+            get => _members.ToArray();
             set
             {
                 _members.Clear();

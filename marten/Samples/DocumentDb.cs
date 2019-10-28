@@ -108,6 +108,8 @@ namespace Samples
                 
                 order2.CustomerId.ShouldBe(order.CustomerId);
                 
+                
+                
                 _output.WriteLine(JsonConvert.SerializeObject(order2, Formatting.Indented));
             }
         }

@@ -6,4 +6,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Marten" Version="5.11.0" />
+      <PackageReference Include="Marten.AspNetCore" Version="5.11.0" />
+    </ItemGroup>
+
 </Project>

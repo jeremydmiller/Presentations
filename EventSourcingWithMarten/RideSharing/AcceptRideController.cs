@@ -1,5 +1,7 @@
 using Marten;
+using Marten.Events;
 using Microsoft.AspNetCore.Mvc;
+using Wolverine;
 
 namespace RideSharing;
 
@@ -14,6 +16,7 @@ public class AcceptRideController : ControllerBase
     {
         var aggregate = await session.LoadAsync<DriverShift>(command.DriverShiftId);
 
+        // Should also validate the DriverShift actually exists too!
         if (aggregate.Status != DriverStatus.Ready)
         {
             throw new Exception("I'm not ready!");
@@ -63,18 +66,41 @@ public class AcceptRideController : ControllerBase
             .Events
             .WriteToAggregate<DriverShift>(command.DriverShiftId, command.Version, stream =>
             {
-                var aggregate = stream.Aggregate;
-
-                if (aggregate.Status != DriverStatus.Ready)
-                {
-                    throw new Exception("I'm not ready!");
-                }
-
-                var accept = new RideAccepted(command.RideId, aggregate.Location);
-        
-                // Append an event with optimistic concurrency
-                stream.AppendOne(accept);
+                JustTheDecision(command, stream);
             });
     }
-    
+
+    public static void JustTheDecision(AcceptRide command, IEventStream<DriverShift> stream)
+    {
+        var aggregate = stream.Aggregate;
+
+        if (aggregate.Status != DriverStatus.Ready)
+        {
+            throw new Exception("I'm not ready!");
+        }
+
+        var accept = new RideAccepted(command.RideId, aggregate.Location);
+
+        // Append an event with optimistic concurrency
+        stream.AppendOne(accept);
+    }
+
+    [HttpPost("/ride/accept4")]
+    public Task AcceptRide4(
+        [FromBody] AcceptRide command,
+        [FromServices] IMessageBus bus) =>
+        bus.InvokeAsync(command);
+}
+
+public static class AcceptRideAggregateHandler
+{
+    public static IEnumerable<object> Handle(AcceptRide command, DriverShift aggregate)
+    {
+        if (aggregate.Status != DriverStatus.Ready)
+        {
+            throw new Exception("I'm not ready!");
+        }
+
+        yield return new RideAccepted(command.RideId, aggregate.Location);
+    }
 }

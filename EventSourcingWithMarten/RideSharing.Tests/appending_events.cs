@@ -1,4 +1,5 @@
 using Marten;
+using Marten.Schema.Identity;
 using Newtonsoft.Json;
 using Xunit.Abstractions;
 
@@ -19,13 +20,22 @@ public class appending_events
         // Pretend this refers to an existing driver in the system
         Guid driverId = Guid.NewGuid();
 
-        using var store =
-            DocumentStore.For(
-                "Host=localhost;Port=5432;Database=marten_testing;Username=postgres;password=postgres;Command Timeout=5");
+        var connectionString = "Host=localhost;Port=5432;Database=marten_testing;Username=postgres;password=postgres;Command Timeout=5";
+        var store = DocumentStore.For(opts =>
+        {
+            opts.Connection(connectionString);
+            opts.Logger(new TestOutputMartenLogger(_output));
 
+            opts.Schema.For<Driver>()
+                .Index(x => x.LicenseType);
+        });
+        
         await using var session = store.LightweightSession();
 
-        var shiftId = Guid.NewGuid();
+        session.CausationId = "demo";
+        session.CorrelationId = "first try";
+
+        var shiftId = CombGuidIdGeneration.NewGuid();
 
         // Start a brand new event stream
         var event1 = new ShiftStarted(driverId, "Big Car", "98052");
@@ -49,5 +59,9 @@ public class appending_events
             _output.WriteLine(JsonConvert.SerializeObject(@event, Formatting.Indented));
             _output.WriteLine("");
         }
+
+        // Projected data from the events above
+        var shift = await session.LoadAsync<DriverShift>(shiftId);
+        _output.WriteLine(JsonConvert.SerializeObject(shift));
     }
 }

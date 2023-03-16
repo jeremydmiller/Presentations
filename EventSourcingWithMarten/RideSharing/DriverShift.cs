@@ -12,6 +12,7 @@ public enum DriverStatus
 
 public class DriverShift
 {
+    // Same as the stream identity
     public Guid Id { get; set; }
     
     // This will matter later!!!

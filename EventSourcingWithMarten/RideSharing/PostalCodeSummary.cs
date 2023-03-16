@@ -76,6 +76,7 @@ public class PostalCodeSummaryAggregation : ExperimentalMultiStreamAggregation<P
 
 public class PostalCodeSummaryController : ControllerBase
 {
+    // This uses Marten.AspNetCore
     [HttpGet("/summary/{code}/{date}")]
     public Task GetSummary(string code, DateTime date, 
         [FromServices] IQuerySession session)

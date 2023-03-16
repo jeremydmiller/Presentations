@@ -1,0 +1,23 @@
+{
+  "Data": {
+    "DriverId": "56fa9fb0-9366-48e6-bd05-6fbbfd49b020",
+    "Category": "Big Car",
+    "PostalCode": "98052"
+  },
+  "EventType": "RideSharing.ShiftStarted, RideSharing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "EventTypeName": "shift_started",
+  "DotNetTypeName": "RideSharing.ShiftStarted, RideSharing",
+  "IsArchived": false,
+  "AggregateTypeName": null,
+  "StreamId": "0186eb2a-a06e-422e-9684-b5781a365d05",
+  "StreamKey": null,
+  "Id": "0186eb2a-aa71-4962-a31b-a6d2950164a8",
+  "Version": 1,
+  "Sequence": 1,
+  "Timestamp": "2023-03-16T16:04:47.718122+00:00",
+  "TenantId": "*DEFAULT*",
+  "CausationId": null,
+  "CorrelationId": null,
+  "Headers": null
+}
+

@@ -1,5 +1,5 @@
 using Marten;
-using Marten.Events.Projections;
+using Marten.Pagination;
 using Shouldly;
 using Xunit.Abstractions;
 
@@ -27,8 +27,7 @@ public class storing_documents
             opts.Schema.For<Driver>()
                 .Index(x => x.LicenseType);
 
-            // We're renaming this to "Snapshot()" soon
-            opts.Projections.SelfAggregate<DriverShift>(ProjectionLifecycle.Inline);
+            opts.Projections.Snapshot<DriverShift>();
         });
 
         await using var session = store.LightweightSession();
@@ -51,7 +50,9 @@ public class storing_documents
         loaded.LastName.ShouldBe(original.LastName);
 
         // Linq query
-        var commercial = await session.Query<Driver>().Where(x => x.LicenseType == "Commercial")
+        var commercial = await session
+            .Query<Driver>()
+            .Where(x => x.LicenseType == "Commercial")
             .ToListAsync();
         
         // Which leads to:

@@ -69,7 +69,7 @@ public class PostalCodeSummaryAggregation : ExperimentalMultiStreamAggregation<P
 
     public void Apply(RideEnded ended, PostalCodeSummary summary)
     {
-        summary.Rides++;
+        summary.Rides--;
         summary.Mileage += ended.Mileage;
     }
 }
@@ -83,6 +83,8 @@ public class PostalCodeSummaryController : ControllerBase
     {
         var identifier = PostalCodeSummary.CreateIdentifier(code, date);
 
-        return session.Json.WriteById<PostalCodeSummary>(identifier, HttpContext);
+        return session
+            .Json
+            .WriteById<PostalCodeSummary>(identifier, HttpContext);
     }
 }

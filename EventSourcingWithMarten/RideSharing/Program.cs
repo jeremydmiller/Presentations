@@ -14,14 +14,17 @@ builder.Services.AddMarten(opts =>
     opts.Connection(connectionString);
 
     // Tell Marten to update this aggregate inline
-    opts.Projections.SelfAggregate<DriverShift>(ProjectionLifecycle.Inline);
+    opts.Projections.Snapshot<DriverShift>();
     
     // Add the big async projection
     opts.Projections.Add(new PostalCodeSummaryAggregation(), ProjectionLifecycle.Async);
 })
     // This adds in async projection support
     .AddAsyncDaemon(DaemonMode.HotCold)
-    .IntegrateWithWolverine()
+    
+    .IntegrateWithWolverine() // Wolverine outbox support, also Wolverine transactional middleware
+    
+    // Any event captured by Marten, that has known subscribers in Wolverine
     .EventForwardingToWolverine();
 
 builder.Host.UseWolverine(opts =>

@@ -22,10 +22,10 @@ public class AcceptRideController : ControllerBase
             throw new Exception("I'm not ready!");
         }
 
-        var accept = new RideAccepted(command.RideId, aggregate.Location);
-        
+        var accepted = new RideAccepted(command.RideId, aggregate.Location);
+            
         // Append an event with optimistic concurrency
-        session.Events.Append(command.DriverShiftId, command.Version + 1, accept);
+        session.Events.Append(command.DriverShiftId, command.Version + 1, accepted);
 
         await session.SaveChangesAsync();
     }
@@ -94,6 +94,7 @@ public class AcceptRideController : ControllerBase
 
 public static class AcceptRideAggregateHandler
 {
+    // Wolverine calls this, this is the "Decider" pattern
     public static IEnumerable<object> Handle(AcceptRide command, DriverShift aggregate)
     {
         if (aggregate.Status != DriverStatus.Ready)
@@ -102,5 +103,13 @@ public static class AcceptRideAggregateHandler
         }
 
         yield return new RideAccepted(command.RideId, aggregate.Location);
+    }
+}
+
+public class RideAcceptedHandler
+{
+    public void Handle(RideAccepted command, ILogger logger)
+    {
+        logger.LogInformation("Do stuff with this ride");
     }
 }

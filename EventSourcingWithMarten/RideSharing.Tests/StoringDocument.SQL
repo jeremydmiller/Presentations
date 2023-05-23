@@ -9,7 +9,8 @@ CREATE TABLE public.mt_doc_driver (
                                       CONSTRAINT pkey_mt_doc_driver_id PRIMARY KEY (id)
 );
 
-CREATE INDEX mt_doc_driver_idx_license_type ON public.mt_doc_driver USING btree ((data ->> 'LicenseType'));
+CREATE INDEX mt_doc_driver_idx_license_type 
+    ON public.mt_doc_driver USING btree ((data ->> 'LicenseType'));
 
 CREATE OR REPLACE FUNCTION public.mt_upsert_driver(doc JSONB, docDotNetType varchar, docId uuid, docVersion uuid) RETURNS UUID LANGUAGE plpgsql SECURITY INVOKER AS $function$
 DECLARE

@@ -1,4 +1,5 @@
 using Marten;
+using Marten.Events.Projections;
 using Marten.Schema.Identity;
 using Newtonsoft.Json;
 using Xunit.Abstractions;
@@ -26,8 +27,8 @@ public class appending_events
             opts.Connection(connectionString);
             opts.Logger(new TestOutputMartenLogger(_output));
 
-            opts.Schema.For<Driver>()
-                .Index(x => x.LicenseType);
+            opts.Projections
+                .Snapshot<DriverShift>();
         });
         
         await using var session = store.LightweightSession();
@@ -60,8 +61,17 @@ public class appending_events
             _output.WriteLine("");
         }
 
-        // Projected data from the events above
+        // Projected data from the events above with Snapshotting or an Inline lifecycle
         var shift = await session.LoadAsync<DriverShift>(shiftId);
         _output.WriteLine(JsonConvert.SerializeObject(shift));
+        
+        // Live aggregation
+
+        // 2pm yesterday
+        var time = DateTime.Today.AddDays(-1).AddHours(14);
+        var shift2 = await session
+            .Events
+            .AggregateStreamAsync<DriverShift>(shiftId, timestamp:time);
+
     }
 }
